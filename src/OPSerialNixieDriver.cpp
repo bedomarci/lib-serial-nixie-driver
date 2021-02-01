@@ -39,10 +39,10 @@ void OPSerialNixieDriver::render() {
 //        Serial.print('\t');
 //        printBinary(serialData[(i * 2) + 1]);
 //        Serial.print('\t');
-    }
+//    }
     }
     digitalWrite(_latchPin, HIGH);
-    Serial.println();
+//    Serial.println();
 }
 
 void OPSerialNixieDriver::setShiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t latchPin) {
