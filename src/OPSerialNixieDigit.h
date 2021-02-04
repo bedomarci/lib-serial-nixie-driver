@@ -15,6 +15,7 @@ public:
     void calculate(uint8_t *dataArray);
     void setDigitValue(int value);
     void setEnabled(int enabled);
+    int getValue();
 };
 
 

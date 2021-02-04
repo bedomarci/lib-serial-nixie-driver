@@ -16,27 +16,35 @@ public:
 
     void setValue(int value);
 
-    void setEnabled(bool enabled);
+    void setDisplayEnabled(bool enabled);
+
+    void setDigitEnabled(uint8_t index, bool enabled);
 
     void setShiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t latchPin);
 
     void setBitOrder(uint8_t bitOrder);
 
-//    void printBinary(uint8_t byte);
+    void setUnusedDigitVisibility(bool enabled);
+
+    void printBinary(uint8_t byte);
+
     void render();
 
 protected:
     uint8_t _clockPin, _dataPin, _latchPin;
     uint8_t _bitOrder = MSBFIRST;
     uint8_t *serialData;
+    bool *digitEnabled;
     OPSerialNixieDigit **digits = nullptr;
     int _numberOfDigits = 1;
     int _value = 0;
-    int _enabled = false;
+    int _enabled = 0;
 
     int getDigitValue(int number, int digit);
 
 private:
+    bool _unusedDigitVisibility = true;
+    void calculateDigitEnabled();
 
 };
 

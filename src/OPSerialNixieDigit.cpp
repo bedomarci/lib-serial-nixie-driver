@@ -23,3 +23,7 @@ void OPSerialNixieDigit::setDigitValue(int value) {
 void OPSerialNixieDigit::setEnabled(int enabled) {
     _enabled = enabled;
 }
+
+int OPSerialNixieDigit::getValue() {
+    return _value;
+}
